@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viwport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="logo">장채연 Portfolio</div>
+        <div class="nav-right">
+          <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>안녕하세요, 프론트엔드 개발자 장채연입니다.</h1>
+        <p class="hero-subtitle">
+          사용자의 마음을 움직이는 서비스를 기획하고 만듭니다.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">프로젝트 보기</a>
+          <a href="#about" class="btn-secondary">더 알아보기</a>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about-section">
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-content">
+        <img src="images/profile.jpg" alt="프로필 사진" class="profile-image" />
+        <div class="about-info">
+          <div class="info-item">
+            <span class="info-label">이름</span>
+            <span class="info-value">장채연</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">생년월일</span>
+            <span class="info-value">2004.05.01</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">주소</span>
+            <span class="info-value">서울시 서대문구</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">이메일</span>
+            <span class="info-value">blueji200@hanyang.ac.kr</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">학력</span>
+            <span class="info-value">한양대학교 컴퓨터소프트웨어학부</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">GitHub</span>
+            <span class="info-value">
+              <a href="https://github.com/zx0501" target="_blank">zx0501</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="skills-section">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">💻</div>
+          <h3>Frontend</h3>
+          <p>HTML, CSS, JavaScript, React, Flutter</p>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">🛠️</div>
+          <h3>Tools</h3>
+          <p>Git, Figma, Notion, Slack</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects-section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="images/project1.png"
+              alt="Dream Drivers 프로젝트 이미지"
+            />
+          </div>
+          <div class="project-content">
+            <h3>Dream Drivers</h3>
+            <p class="project-subtitle">구름톤 유니브 4기 2025 시즌톤</p>
+            <p>
+              청소년 수요 기반 이동 도서관 신청 및 운영 앱<br /><br />
+              <strong>핵심 구현 기능 :</strong><br />
+              • PM, 프론트엔드로 참여<br />
+              • 회원가입/로그인 시스템 구현<br />
+              • 카카오 로그인 API 연동<br />
+              • 버스 신청 시스템 구현
+            </p>
+            <div class="project-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Kakao API</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/9oormthon-univ/2025_SEASONTHON_TEAM_26_FE"
+                target="_blank"
+                class="project-link"
+              >
+                Frontend Repo
+              </a>
+              <a
+                href="https://github.com/9oormthon-univ/2025_SEASONTHON_TEAM_26_BE/tree/feat/21-bus"
+                target="_blank"
+                class="project-link"
+              >
+                Backend Repo
+              </a>
+              <a
+                href="documents/26-Dream Drivers-발표자료.pdf"
+                target="_blank"
+                class="project-link"
+              >
+                발표자료 PDF
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/project2.png" alt="모꼬지 프로젝트 이미지" />
+          </div>
+          <div class="project-content">
+            <h3>모꼬지</h3>
+            <p class="project-subtitle">구름톤 유니브 4기 2025 성장톤</p>
+            <p>
+              우리동네 소상공인 전용 지도 서비스<br /><br />
+              <strong>핵심 구현 기능:</strong><br />
+              • PM으로 참여 서비스 기획<br />
+              • IA 및 와이어프레임 설계<br />
+              • 기능명세서 작성
+            </p>
+            <div class="project-tags">
+              <span class="tag">PM</span>
+              <span class="tag">Figma</span>
+              <span class="tag">React</span>
+              <span class="tag">Vite</span>
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Redis</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Growth-thon5/Mokkojii_Frontend"
+                target="_blank"
+                class="project-link"
+              >
+                Frontend Repo
+              </a>
+              <a
+                href="https://github.com/Growth-thon5/Mokkojii-Backend"
+                target="_blank"
+                class="project-link"
+              >
+                Backend Repo
+              </a>
+              <a
+                href="documents/5팀_오꼬지_발표자료.pdf"
+                target="_blank"
+                class="project-link"
+              >
+                발표자료 PDF
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/project3.png" alt="Wavy 프로젝트 이미지" />
+          </div>
+          <div class="project-content">
+            <h3>Wavy</h3>
+            <p class="project-subtitle">HYU CSE EOS 2025 에커톤</p>
+            <p>
+              페스티벌 타임테이블 커스터마이징 및 플레이리스트 생성 서비스<br /><br />
+              <strong>핵심 구현 기능:</strong><br />
+              • 프론트엔드로 참여, 개발 진행 중<br />
+              • 페스티벌 조회(Lookup) 페이지 구현<br />
+              • 페스티벌 상세 페이지 구현<br />
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">shadcn/ui</span>
+              <span class="tag">Vercel</span>
+              <span class="tag">Supabase</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/EOS-Timetable/Wavy"
+                target="_blank"
+                class="project-link"
+              >
+                Repository
+              </a>
+              <a
+                href="https://wavy-deployment.vercel.app/"
+                target="_blank"
+                class="project-link"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/project4.png" alt="MyPlay 프로젝트 이미지" />
+          </div>
+          <div class="project-content">
+            <h3>MyPlay</h3>
+            <p class="project-subtitle">구름톤 유니브 4기 한양대 프로젝트</p>
+            <p>
+              문화생활 관리 및 커뮤니티 앱<br /><br />
+              <strong>핵심 구현 기능:</strong><br />
+              • PM으로 참여 서비스 기획<br />
+              • IA 및 와이어프레임 설계<br />
+              • 기능명세서 작성
+            </p>
+            <div class="project-tags">
+              <span class="tag">PM</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Kakao API</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://github.com/Team0479/frontend"
+                target="_blank"
+                class="project-link"
+              >
+                Frontend Repo
+              </a>
+              <a
+                href="https://github.com/Team0479/backend"
+                target="_blank"
+                class="project-link"
+              >
+                Backend Repo
+              </a>
+              <a
+                href="documents/MyPlay 발표자료.pdf"
+                target="_blank"
+                class="project-link"
+              >
+                발표자료 PDF
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2026 장채연. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
