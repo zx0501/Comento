@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clock</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <!-- 메인 컨테이너 -->
+        <div class="container">
+            <!-- 시간 섹션 -->
+             <section class="time-section" id="timeSection">
+                <div class="current-time" id="currentTime"></div>
+             </section>
+
+             <!-- 알람 설정 섹션 -->
+            <section class="alarm-section" id="alarmSection">
+                <h3>알람 설정</h3>
+                <div class="alarm-inputs">
+                    <div class="input-group">
+                        <label for="alarmHour">시</label>
+                        <input type="number" id="alarmHour" min="0" max="23" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="alarmMinute">분</label>
+                        <input type="number" id="alarmMinute" min="0" max="59" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="alarmSecond">초</label>
+                        <input type="number" id="alarmSecond" min="0" max="59" value="0">
+                    </div>
+                    <button class="add-alarm-btn" id="addAlarmBtn">추가</button>
+                </div>
+            </section>
+
+            <!-- 알람 리스트 섹션 -->
+            <section class="alarm-list-section" id="alarmListSection">
+                <!-- 배터리 섹션 -->
+                <div class="battery-section">
+                    <div class="battery-icon">
+                        <svg width="40" height="20" viewBox="0 0 40 20">
+                            <rect x="2" y="5" width="30" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <rect x="32" y="8" width="3" height="4" rx="1" fill="currentColor"/>
+                            <rect class="battery-fill" x="4" y="7" width="26" height="6" rx="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="battery-percent">100%</span>
+                </div>
+                <h3>알람 현황</h3>
+                <ul class="alarm-list" id="alarmList"></ul>
+            </section>
+        </div>
+    </body>
+</html>
