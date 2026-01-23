@@ -168,7 +168,6 @@ addAlarmBtn.addEventListener('click', addAlarm);
 
 // 초기 실행
 updateTime();
-updateBattery();
 
 // 1초마다 시간과 배터리 업데이트
 setInterval(() => {
