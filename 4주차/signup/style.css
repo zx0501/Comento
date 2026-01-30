@@ -1,0 +1,292 @@
+/* 전역 스타일 변수 */
+:root {
+    /* 색상 */
+    --bg-color: #F5F3FF;
+    --primary-color: #9B7EDE;
+    --primary-hover: #8B6ECE;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-light: #999;
+    --text-white: #fff;
+    --border-color: #e0e0e0;
+    --border-light: #f0f0f0;
+    --error-color: #ff6b6b;
+    --error-bg: #fff5f5;
+    --success-color: #51cf66;
+    --success-bg: #f0fdf4;
+    --border-focus: #9B7EDE;
+
+    /* 간격 */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 18px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 24px;
+    --spacing-xxxl: 28px;
+    --spacing-xxxxl: 30px;
+
+    /* 폰트 크기 */
+    --font-xs: 13px;
+    --font-sm: 14px;
+    --font-md: 15px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 24px;
+    --font-xxxl: 28px;
+    --font-xxxxl: 30px;
+
+    /* 폰트 굵기 */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* border radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 50%;
+
+    /* 그림자 */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(155, 126, 222, 0.4);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 6px 16px rgba(155, 126, 222, 0.5);
+
+    /* 트랜지션 */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+}
+
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 회원가입 섹션 */
+.signup-section {
+    width: 100%;
+}
+
+.signup-card {
+    background: var(--text-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.signup-header {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    text-align: center;
+}
+
+.signup-title {
+    font-size: var(--font-xl);
+    font-weight: var(--font-semibold);
+}
+
+.signup-content {
+    padding: var(--spacing-xl);
+}
+
+/* 폼 스타일 */
+#signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-label {
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.input-wrapper {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: 2px;
+}
+
+.form-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-md);
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(155, 126, 222, 0.1);
+}
+
+.form-input.error {
+    border-color: var(--error-color);
+}
+
+.form-input.success {
+    border-color: var(--success-color);
+}
+
+/* 중복확인 버튼 */
+.btn-check {
+    padding: 12px var(--spacing-md);
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.btn-check:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-check:disabled {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* 에러/성공 메시지 */
+.error-message,
+.success-message {
+    font-size: var(--font-xs);
+    padding: 2px 0;
+    min-height: 16px;
+    margin-top: -4px;
+}
+
+.error-message {
+    color: var(--error-color);
+}
+
+.success-message {
+    color: var(--success-color);
+}
+
+/* 비밀번호 요구사항 */
+.password-requirements {
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background-color: var(--border-light);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+.requirement-icon {
+    font-size: 12px;
+    transition: all var(--transition-fast);
+}
+
+.requirement-item.valid .requirement-icon {
+    color: var(--success-color);
+}
+
+.requirement-item.valid .requirement-icon::before {
+    content: '✓';
+}
+
+.requirement-item.invalid .requirement-icon {
+    color: var(--error-color);
+}
+
+.requirement-item.invalid .requirement-icon::before {
+    content: '○';
+}
+
+/* 제출 버튼 */
+.form-actions {
+    margin-top: var(--spacing-md);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-md);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-submit:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-submit:disabled {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    .signup-content {
+        padding: var(--spacing-lg);
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+    }
+
+    .btn-check {
+        width: 100%;
+    }
+}
+

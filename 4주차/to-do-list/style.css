@@ -1,0 +1,502 @@
+/* 전역 스타일 변수 */
+:root {
+    /* 색상 */
+    --bg-color: #F5F3FF;
+    --primary-color: #9B7EDE;
+    --primary-hover: #8B6ECE;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-light: #999;
+    --text-white: #fff;
+    --border-color: #e0e0e0;
+    --border-light: #f0f0f0;
+    --today-bg: #E8E0FF;
+    --error-color: #ff6b6b;
+    --error-bg: #fff5f5;
+
+    /* 간격 */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 18px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 24px;
+    --spacing-xxxl: 28px;
+    --spacing-xxxxl: 30px;
+
+    /* 폰트 크기 */
+    --font-xs: 13px;
+    --font-sm: 14px;
+    --font-md: 15px;
+    --font-lg: 18px;
+    --font-xl: 20px;
+    --font-xxl: 24px;
+    --font-xxxl: 28px;
+    --font-xxxxl: 30px;
+
+    /* 폰트 굵기 */
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* border radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 50%;
+
+    /* 그림자 */
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(155, 126, 222, 0.4);
+    --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 6px 16px rgba(155, 126, 222, 0.5);
+
+    /* 모달 배경 */
+    --modal-overlay: rgba(0, 0, 0, 0.5);
+    --modal-overlay-hover: rgba(255, 255, 255, 0.2);
+
+    /* 크기 */
+    --btn-size-sm: 30px;
+    --btn-size-md: 35px;
+    --btn-size-lg: 60px;
+    --checkbox-size: 20px;
+    --checkbox-dot: 6px;
+    --selected-dot: 8px;
+
+    /* 트랜지션 */
+    --transition-fast: 0.2s;
+    --transition-normal: 0.3s;
+}
+
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    padding: var(--spacing-lg);
+}
+
+.container {
+    display: flex;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+    height: calc(100vh - 40px);
+}
+
+.calendar-section {
+    flex: 1;
+    height: 80%;
+    background: var(--text-white);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.nav-btn {
+    background: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-size: var(--font-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast);
+}
+
+.nav-btn:hover {
+    background: var(--primary-hover);
+}
+
+.month-year {
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
+}
+
+.calendar-grid {
+    width: 100%;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.weekday {
+    text-align: center;
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    padding: 6px;
+    font-size: 12px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--spacing-xs);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: var(--font-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+    position: relative; 
+}
+
+.calendar-day:hover {
+    background: var(--bg-color);
+}
+
+.calendar-day.other-month {
+    color: #ccc;
+}
+
+.calendar-day.today {
+    background-color: var(--today-bg);
+    font-weight: var(--font-semibold);
+}
+
+.calendar-day.selected {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.calendar-day.selected::after {
+    content: '';
+    position: absolute;
+    width: var(--selected-dot);
+    height: var(--selected-dot);
+    background-color: var(--text-white);
+    border-radius: var(--radius-full);
+    bottom: var(--spacing-xs);
+}
+
+.calendar-day.has-todos {
+    font-weight: var(--font-semibold);
+}
+
+.todo-section {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.todo-card {
+    background: var(--text-white);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.todo-header {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.todo-title {
+    font-size: var(--font-md);
+    font-weight: var(--font-semibold);
+    text-align: center;
+}
+
+.todo-content {
+    padding: var(--spacing-md);
+    min-height: 200px;
+}
+
+.selected-date {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: var(--font-medium);
+}
+
+.todo-list {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
+.todo-checkbox:hover {
+    border-color: var(--primary-color);
+}
+
+.todo-checkbox.completed {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.todo-checkbox.completed::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--checkbox-dot);
+    height: var(--checkbox-dot);
+    background-color: var(--text-white);
+    border-radius: var(--radius-full);
+}
+
+.todo-text {
+    flex: 1;
+    font-size: var(--font-sm);
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+}
+
+.todo-text.completed {
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+
+.todo-delete {
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 16px;
+    padding: var(--spacing-xs);
+    transition: color var(--transition-fast);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.todo-item:hover .todo-delete {
+    opacity: 1;
+}
+
+.todo-delete:hover {
+    color: var(--error-color);
+}
+
+.max-tasks-message {
+    color: var(--error-color);
+    font-size: var(--font-xs);
+    text-align: center;
+    padding: var(--spacing-sm);
+    background-color: var(--error-bg);
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: var(--spacing-xxl);
+    right: var(--spacing-xxl);
+    width: var(--btn-size-lg);
+    height: var(--btn-size-lg);
+    border-radius: var(--radius-full);
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    font-size: var(--font-xxxxl);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    z-index: 100;
+}
+
+.floating-btn:hover {
+    background-color: var(--primary-hover);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-overlay);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: var(--text-white);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 400px;
+    box-shadow: var(--shadow-lg);
+    animation: modalSlideIn var(--transition-normal) ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.modal-header h2 {
+    font-size: var(--font-lg);
+    font-weight: var(--font-semibold);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: var(--font-xxxl);
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: var(--btn-size-sm);
+    height: var(--btn-size-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast);
+}
+
+.modal-close:hover {
+    background-color: var(--modal-overlay-hover);
+}
+
+.modal-body {
+    padding: var(--spacing-xl);
+}
+
+.todo-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: var(--font-md);
+    margin-bottom: var(--spacing-lg);
+    transition: border-color var(--transition-fast);
+}
+
+.todo-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.modal-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-add {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--font-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-cancel {
+    background-color: var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-cancel:hover {
+    background-color: var(--border-color);
+}
+
+.btn-add {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.btn-add:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-add:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 968px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .calendar-section {
+        margin-bottom: var(--spacing-lg);
+    }
+}

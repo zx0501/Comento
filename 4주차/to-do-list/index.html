@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>To-Do List</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button class="nav-btn prev-month" id="prevMonth"><</button>
+                    <h2 class="month-year" id="monthYear"></h2>
+                    <button class="nav-btn next-month" id="nextMonth">></button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-weekdays">
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </section>
+
+            <section class="todo-section">
+                <div class="todo-card">
+                    <div class="todo-header">
+                        <h1 class="todo-title">To do</h1>
+                    </div>
+                    <div class="todo-content">
+                        <div class="selected-date" id="selectedDate"></div>
+                        <ul class="todo-list" id="todoList"></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <button class="floating-btn" id="floatingBtn">+</button>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2>Add a new task</h2>
+                    <button class="modal-close" id="modalClose">x</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="todo-input" id="todoInput" placeholder="Enter your task">
+                    <div class="modal-actions">
+                        <button class="btn-cancel" id="btnCancel">Cancel</button>
+                        <button class="btn-add" id="btnAdd">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
