@@ -19,7 +19,6 @@ class TodoApp {
     // 초기화 메서드
     init() {
         this.loadTodos();
-        this.setupEventListeners();
         this.notifyObservers('init');
     }
 
@@ -76,7 +75,7 @@ class TodoApp {
 
     // 일정 추가 (상태 변경 통제)
     addTodo(dateStr, text) {
-        if (!text || text.trim()) {
+        if (!text || !text.trim()) {
             throw new Error('할 일을 입력해주세요.');
         }
 
@@ -427,4 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const todoApp = new TodoApp();
     const todoUI = new TodoUI(todoApp);
     todoUI.setupEventListeners();
+    // 초기 렌더링 보장
+    todoUI.renderCalendar();
+    todoUI.renderTodos();
 });
